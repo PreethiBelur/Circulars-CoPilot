@@ -1,0 +1,13 @@
+.navbar,
+.navbar-default {
+    background-image: linear-gradient(to bottom,#004D44 0,#004D44 100%) !important; /* override background image gradient w/ flat color */
+}
+
+.navbar-brand{
+    color: #FFFFFF;
+    text-align: center;
+}
+
+nav .nav-item {
+    color: white !important;
+    }

@@ -1,0 +1,151 @@
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.commandsContainer {
+    display: flex;
+    align-self: flex-end;
+}
+
+.chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.chatEmptyState {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 1024px;
+    padding-top: 60px;
+}
+
+.chatEmptyStateTitle {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.chatEmptyStateSubtitle {
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.chatInput {
+    position: sticky;
+    bottom: 0;
+    flex: 0 0 100px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+    max-width: 1028px;
+    background: #f2f2f2; 
+}
+
+.askQuestionInput {
+    max-width: 800px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.askBottomSection {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.askAnswerContainer {
+    max-width: 800px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.askContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.askTopSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.askTitle {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-top: 130px;
+}
+
+.chatMessageStream {
+    flex-grow: 1;
+    max-height: 1024px;
+    max-width: 1028px;
+    width: 100%;
+    overflow-y: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatRoot {
+    flex: 1;
+    display: flex;
+}
+
+.commandButton {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.chatMessageGptMinWidth {
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+.chat-message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 60%;
+  }
+  
+  .user-message {
+    align-self: flex-end;
+    background-color: #d1e7dd;
+    color: #0f5132;
+  }
+  
+  .assistant-message {
+    align-self: flex-start;
+    background-color: #f8d7da;
+    color: #842029;
+  }
+
+  .messageActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
