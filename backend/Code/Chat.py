@@ -14,7 +14,7 @@ from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
 from azure.search.documents.models import QueryType, QueryCaptionType, QueryAnswerType, VectorizableTextQuery
  
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 from dotenv import dotenv_values
 #endregion
@@ -339,8 +339,8 @@ async def chat():
         chat_with_history_function, KernelArguments(query_term=query_term, db_record=db_contents, history=chat_history)
     )
    
-    citations_list = []
-    [citations_list.extend([key, value]) for key,value in db_metadata.items()]
+    citations_list = {}
+    [citations_list.update({key: value}) for key,value in db_metadata.items()]
     split_results = str(completions_result).split("Citations:")
     json_results = {"message": split_results[0],
                     "citations": citations_list}

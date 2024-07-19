@@ -29,7 +29,6 @@ export const Answer = ({ answer }: Props) => {
     //     return citation.split(',')[1]
     // }
 
-
     return (
         <Stack className={styles.answerContainer}>
             <Stack.Item>
@@ -39,18 +38,15 @@ export const Answer = ({ answer }: Props) => {
                 <Stack>
                     <div className={styles.answerText}>
                         <p>{messageContent}</p>
-                        {citations.length > 0 && (
+                        {citations && Object.keys(citations).length > 0 && (
                             <div className={styles.citations}>
-                                <p>Citations:</p>
-                                <ol>
-                                    {citations.map((citation, index) => (
-                                        <li key={index}>
-                                            <a href={formatCitation(citation)} target="_blank" rel="noopener noreferrer">
-                                            {formatCitation(citation)}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ol>
+                                {Object.entries(citations).map(([documentName, documentLink], index) => (
+                                    <p key={index} className={styles.citationItem}>
+                                        <a href={documentLink} target="_blank" rel="noopener noreferrer">
+                                            {documentName}
+                                        </a>
+                                    </p>
+                                ))}
                             </div>
                         )}
                     </div>
