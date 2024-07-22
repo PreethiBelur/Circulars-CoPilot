@@ -34,14 +34,10 @@ secrets=dotenv_values(".env")
 #endregion
  
  
-# OPENAI_ENDPOINT = secrets["OPENAI_ENDPOINT"]
-# OPENAI_API_KEY = secrets["OPENAI_API_KEY"]
-# OPENAI_CHAT_DEPLOYMENT_NAME = secrets["OPENAI_CHAT_DEPLOYMENT_NAME"]
-# OPENAI_EMBEDDING_DEPLOYMENT_NAME = secrets['OPENAI_EMBEDDING_DEPLOYMENT_NAME']
-OPENAI_ENDPOINT = "https://azureopenai-dsp-poc.openai.azure.com/"
-OPENAI_API_KEY = "53cc3a1155f646ea8a84b222d0d058a6"
-OPENAI_CHAT_DEPLOYMENT_NAME = "gpt-35-turbo"
-OPENAI_EMBEDDING_DEPLOYMENT_NAME = "text-embedding-ada-002"
+OPENAI_ENDPOINT = secrets["OPENAI_ENDPOINT"]
+OPENAI_API_KEY = secrets["OPENAI_API_KEY"]
+OPENAI_CHAT_DEPLOYMENT_NAME = secrets["OPENAI_CHAT_DEPLOYMENT_NAME"]
+OPENAI_EMBEDDING_DEPLOYMENT_NAME = secrets['OPENAI_EMBEDDING_DEPLOYMENT_NAME']
 AZURE_SUBSCRIPTION_KEY = secrets["AZURE_SUBSCRIPTION_KEY"] 
 AZURE_REGION = secrets["AZURE_REGION"] 
  
@@ -162,13 +158,10 @@ generate_vector_queries_function = kernel.add_function(
 #endregion
 #region ##### Create AI Search function #####
  #Azure AI Search Credentials
-# AZURE_SEARCH_ENDPOINT = secrets["AZURE_SEARCH_ENDPOINT"]
-# AZURE_SEARCH_API_KEY = secrets["AZURE_SEARCH_API_KEY"]
-# AZURE_INDEX = secrets["AZURE_INDEX"]
+AZURE_SEARCH_ENDPOINT = secrets["AZURE_SEARCH_ENDPOINT"]
+AZURE_SEARCH_API_KEY = secrets["AZURE_SEARCH_API_KEY"]
+AZURE_INDEX = secrets["AZURE_INDEX"]
  
-AZURE_SEARCH_ENDPOINT="https://azureaisearch-dsp-poc.search.windows.net/"
-AZURE_SEARCH_API_KEY="AOQyg6qahicZBKT2RMOPXniFOcplkIfnFEdp8eEuCQAzSeCB19Ai"
-AZURE_INDEX = "circulars-inhouse-demo-index"
  
 AZURE_SEARCH_CREDENTIAL = AzureKeyCredential(AZURE_SEARCH_API_KEY)
 search_client = SearchClient(AZURE_SEARCH_ENDPOINT, AZURE_INDEX, AZURE_SEARCH_CREDENTIAL)
